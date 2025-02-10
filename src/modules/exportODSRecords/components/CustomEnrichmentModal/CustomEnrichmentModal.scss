@@ -1,0 +1,132 @@
+.content {
+  height: calc(100% - 158px);
+  min-height: 220px;
+  overflow: auto;
+  padding: 0 10px;
+}
+
+.container {
+  padding: 20px 25px;
+  margin: auto;
+  min-height: 210px;
+}
+
+.cardPanel {
+  background-color: #0000;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 0;
+  max-width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column-reverse;
+  min-height: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.cardContent {
+  background-color: #0000;
+  padding: 0;
+  border-radius: 5px;
+  height: 100%;
+  overflow: auto;
+  background: rgba(255, 255, 255, 1);
+  box-sizing: border-box;
+}
+
+.internal {
+  padding: 15px 15px 30px;
+}
+
+.ud-field {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.field {
+  max-width: 655px;
+  align-items: flex-start;
+  display: flex;
+  font-family: Open Sans, serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  width: 100%;
+}
+
+.fieldLabelContainer {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  min-height: 28px;
+  padding-right: 10px;
+}
+
+.fieldLabel {
+  color: rgba(102, 102, 102, 1);
+  cursor: default;
+  font-style: normal;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fieldInputContainer {
+  color: rgba(102, 102, 102, 1);
+}
+
+.ud-inline-message {
+  display: table;
+  font-size: 12px;
+  width: 100%;
+  height: 36px;
+  box-sizing: border-box;
+}
+
+.ud-inline-message.ud-inline-message-type-info {
+  background-color: rgba(217, 235, 251, 1);
+  border: 1px solid rgba(79, 125, 182, 1);
+  color: rgba(51, 51, 51, 1);
+}
+
+.ud-inline-message .ud-inline-message-icon {
+  border: none;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  display: table-cell;
+  height: 100%;
+  padding: 10px 0 7px;
+  text-align: center;
+  vertical-align: middle;
+  width: 60px;
+  box-sizing: border-box;
+}
+
+.footer {
+  border-top: 1px solid rgba(203, 203, 203, 1);
+  display: flex;
+  height: 50px;
+  margin-top: auto;
+  padding: 10px 16px;
+  width: 100%;
+}
+
+.footerControls {
+  display: flex;
+  width: 50%;
+}
+
+.leftContainer {
+  justify-content: flex-start;
+}
+
+.rightContainer {
+  justify-content: flex-end;
+}
