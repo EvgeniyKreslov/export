@@ -1,0 +1,33 @@
+{
+  "extends": "@universe-platform/ui-cli/vite/tsconfig.json",
+  "compilerOptions": {
+    "useDefineForClassFields": false,
+    "jsx": "react",
+    "target": "es6",
+    "removeComments": false,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "sourceMap": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": [
+      "es2015",
+      "es2017",
+      "dom"
+    ],
+    "noErrorTruncation": true,
+    "allowSyntheticDefaultImports": true,
+    "composite": true,
+    "skipLibCheck": true
+  },
+  "files": ["src/my_index.tsx"],
+  "include": [
+    "src/**/*"
+  ]
+}

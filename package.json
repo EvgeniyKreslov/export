@@ -1,0 +1,56 @@
+{
+  "name": "cct_mdm_6_fe",
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "eslint --fix",
+    "build": "npx tsc && npx vite build --config node_modules/@universe-platform/ui-cli/vite/vite.external.config.ts"
+  },
+  "license": "ISC",
+  "sourceType": "module",
+  "dependencies": {
+    "@bem-react/classname": "1.6.0",
+    "@bem-react/core": "5.1.0",
+    "@bem-react/di": "5.0.0",
+    "@universe-platform/sdk": "^1.6.1",
+    "global": "^4.4.0",
+    "mobx": "4.15.7",
+    "mobx-react": "6.3.1",
+    "mobx-react-lite": "2.2.2",
+    "nvm": "^0.0.4",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.2",
+    "@types/react-dom": "^16.9.25",
+    "@typescript-eslint/eslint-plugin": "6.12.0",
+    "@typescript-eslint/parser": "6.12.0",
+    "@universe-platform/ui-cli": "^1.6.1",
+    "@universe-platform/uikit": "^1.6.39",
+    "babel-eslint": "^8.2.6",
+    "eslint": "8.57.0",
+    "eslint-plugin-etc": "2.0.3",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-mocha": "10.4.1",
+    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-react": "7.34.1",
+    "eslint-plugin-react-hooks": "4.6.2",
+    "eslint-plugin-regexp": "2.4.0",
+    "eslint-plugin-simple-import-sort": "12.0.0",
+    "eslint-plugin-sonarjs": "0.25.1",
+    "eslint-plugin-sort-class-members": "1.20.0",
+    "eslint-plugin-total-functions": "7.1.0",
+    "eslint-plugin-unicorn": "51.0.1",
+    "eslint-plugin-wix-editor": "3.3.0",
+    "node-sass": "^9.0.0",
+    "prop-types": "^15.8.1",
+    "sass": "^1.71.0",
+    "vite-plugin-css-injected-by-js": "^3.2.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
+  }
+}
