@@ -3,14 +3,17 @@ import customStore from "../entities/CustomExportStore";
 
 const { formData, setIsModalOpen } = customStore;
 
+const udToken = localStorage.getItem('ud-token');
+const udSession = localStorage.getItem('ud-session');
+
 export const importData = () => {
   fetch(
-    '/universe-backend/api/v2/core/import-data',
+    `/universe-backend/api/v2/core/import-data?_dc=${udSession}`,
     {
       method: 'POST',
       headers: {
         "Content-Type": "multipart/form-data",
-        "Authorization": "07490e02-c5a5-452a-890e-02c5a5d52a59",
+        "Authorization": `${udToken}`,
       },
       body: formData
     }
@@ -33,12 +36,12 @@ export const importData = () => {
 
 export const getTemplate = () => {
   fetch(
-    '/universe-backend/api/v2/core/import-data/template',
+    `/universe-backend/api/v2/core/import-data/template?_dc=${udSession}`,
     {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "07490e02-c5a5-452a-890e-02c5a5d52a59"
+        "Authorization": `${udToken}`
       },
       body: JSON.stringify({
         entityName: 'test',
