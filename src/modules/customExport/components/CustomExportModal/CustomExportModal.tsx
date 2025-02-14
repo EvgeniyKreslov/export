@@ -1,10 +1,12 @@
 import React from "react";
 import { inject, observer } from "mobx-react";
 import customStore from "../../entities/CustomExportStore";
-// import { i18n } from "@universe-platform/sdk";
+import { i18n } from "@universe-platform/sdk";
 import { Button, DropDown, Modal, SIZE, Wizard } from "@universe-platform/uikit";
-import Step1 from "../Steps/Step1";
-import Step2 from "../Steps/Step2";
+import Step1 from "../Steps/Step1/Step1";
+import Step2 from "../Steps/Step2/Step2";
+import Step3 from "../Steps/Step3/Step3";
+import { importData } from "../../api/api";
 
 const { Item } = DropDown;
 
@@ -16,17 +18,6 @@ const { Item } = DropDown;
 })
 @observer
 export class MyComponent extends React.Component<any> {
-  //  get dataRecord () {
-  //     return this.props.dataCardStore.dataRecordStore.getDataEntity();
-  //  }
-
-  //  get metaRecord () {
-  //     return this.props.dataCardStore.metaRecordStore.getMetaEntity();
-  //  }
-
-  //  handleDelete = (wipe: boolean) => {
-  //    return this.props.dataCardStore.handleDelete(wipe);
-  //   };
 
   handleClick = async (value: string) => {
 
@@ -49,8 +40,6 @@ export class MyComponent extends React.Component<any> {
     setIsModalOpen(false)
   };
 
-  onSubmit = () => {}
-
    override render () {
     const { customStore } = this.props;
 
@@ -71,24 +60,24 @@ export class MyComponent extends React.Component<any> {
             <Wizard
               steps={[
                 {
-                  component: <Step1
-                    // checkboxes={customEnrichmentModalStore.checkboxes} onChange={onChange}
-                    // hasRelations={hasRelations}
-                     />,
-                  // label: i18n.t('customEnrichmentModal>firstStep'),
-                  label: 'Параметры экспорта',
+                  component: <Step1 />,
+                  label: i18n.t('firstStep>title'),
                   name: 'options'
                 },
                 {
                   component: <Step2 />,
-                  label: 'Подтверждение',
-                  name: 'confirm'
+                  label: i18n.t('secondStep>title'),
+                  name: 'prepation'
+                },
+                {
+                  component: <Step3 store={customStore}/>,
+                  label: i18n.t('thirdStep>title'),
+                  name: 'import'
                 }
               ]}
-              onSubmit={this.onSubmit}
+              onSubmit={importData}
             />
           </Modal>
-          {/* <CustomEnrichmentModal /> */}
         </>
       );
    }
