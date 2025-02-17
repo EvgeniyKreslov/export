@@ -1,11 +1,11 @@
-import { MyComponent } from "../components/CustomExportModal/CustomExportModal";
+import { ImportODS } from "../components/CustomExportModal/CustomExportModal";
 
-export const customExportUE = {
+export const customImportUE = {
     moduleId: 'testUE',
     type: 'DataCardMenuItem',
     active: true,
     system: false,
     resolver: () => true,
     meta: {},
-    component: MyComponent
+    component: ImportODS
 }

@@ -1,12 +1,8 @@
-import customExportUE from "./modules/customExport";
-// import { init } from "./my_index";
+import customImportUE from "./modules/customExport";
 import './modules/customExport/lib/locales'
-
-
-// setTimeout(init, 1000);
 
 export default {
   userExits: [
-    {...customExportUE}
+    {...customImportUE}
   ]
 }

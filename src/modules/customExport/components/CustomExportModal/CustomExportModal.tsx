@@ -17,7 +17,7 @@ const { Item } = DropDown;
   }
 })
 @observer
-export class MyComponent extends React.Component<any> {
+export class ImportODS extends React.Component<any> {
 
   handleClick = async (value: string) => {
 
@@ -27,7 +27,7 @@ export class MyComponent extends React.Component<any> {
     await setFileType(value)
 
     if(value === 'xlxs') {
-      console.log('click XLXS and open old Modal')
+      console.log('click XLXS and open old Modal') // здесь дёргаем вызов "старой" модалки
     } else {
       setIsModalOpen(true)
     }

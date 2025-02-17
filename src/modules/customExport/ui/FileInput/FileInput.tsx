@@ -3,6 +3,8 @@ import { ICustomStore } from "../../lib/types";
 import { Button, INTENT, SIZE } from "@universe-platform/uikit";
 import { i18n } from "@universe-platform/sdk";
 
+import './fileInput.scss';
+
 interface IProps {
   store: ICustomStore
 }
@@ -19,11 +21,7 @@ const FileInput = ({store}: IProps) => {
   return (
     <>
       <input
-        style={{
-          visibility: 'hidden',
-          opacity: 0,
-          width: 0
-        }}
+        className="fileInput"
         title=''
         id="ods-file"
         type="file"

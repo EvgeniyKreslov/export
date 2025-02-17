@@ -1,15 +1,9 @@
-// import React from 'react';
-// import * as ReactDOM from 'react-dom';
-// import MyComponent from './components/MyComponent.tsx';
-
-
 import { i18n, Locales } from '@universe-platform/sdk';
 
 import { customEnrichmentModalUE } from './modules/exportODSRecords/userExits/customEnrichmentModalUE.ts';
 import { exportRecordMenuItemUE } from './modules/exportODSRecords/userExits/exportRecordMenuItemUE.ts';
 
 import './modules/auditLogPageExportODS/index';
-// import { inject } from 'mobx-react';
 
 export default { userExits: [customEnrichmentModalUE, exportRecordMenuItemUE] };
 
@@ -72,67 +66,3 @@ i18n.addResourceBundle(Locales.En, {
 				exportLogsToODS: 'Export the whole log to ODS'
 		}
 });
-
-
-// const list = document.getElementsByName('import');
-// const button = list.item(1)
-let button: Element | null;
-
-// setTimeout(() => {
-// 	button = document.querySelector('button[name="import"]');
-// }, 1000)
-// const button = document.querySelector('[name="import"]');
-//@ts-ignore
-// button?.style = { display: 'none' }
-
-
-// console.log('list', list)
-// setTimeout(() => {
-// 	console.log('button', button)
-// 	if (button) {
-// 		// button.style = { display: 'none' }
-// 		// button.onclick()
-// 		let elem = document.createElement("div");
-// 		elem.innerHTML ='123';
-// 		button.replaceWith(elem)
-// 	}
-// }, 2000)
-
-export const init = () => {
-		button = document.querySelector('button[name="import"]');
-		console.log('button', button)
-		if (button) {
-			// button.style = { display: 'none' }
-			// button.onclick()
-			let elem = document.createElement("div");
-			elem.id = 'root'
-			elem.innerHTML = '123';
-			button.replaceWith(elem);
-
-
-			// ReactDOM.render(
-			// 	<MyComponent />,
-			// 	document.getElementById('root')
-			// );
-		}
-
-		// root.render(
-		// 		<MyComponent />
-		// );
-}
-
-// @ts-ignore
-// document.querySelector('button[name="import"]')?.onload = init;
-
-// setTimeout(init, 1000)
-
-// document.addEventListener('DOMContentLoaded', init)
-// window.onload = function () {
-// 	console.log("LOADED!");
-// }
-
-// let elem = document.createElement("div");
-// elem.id = 'myID';
-
-// elem.innerHTML = '123';
-// document.body.insertBefore(elem,document.body.childNodes[0]);

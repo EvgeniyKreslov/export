@@ -24,10 +24,6 @@ export const importData = () => {
     } else {
       Dialog.showError('Не получилось импортировать. Попробуйте ещё раз или обратитесь к администратору');
     }
-    console.log('res --- ', res);
-  })
-  .catch((err: any) => {
-    console.log('error --- ', err);
   })
   .finally(() => {
     setIsModalOpen(false)
