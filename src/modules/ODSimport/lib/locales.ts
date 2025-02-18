@@ -1,6 +1,10 @@
 import { i18n, Locales } from '@universe-platform/sdk';
 
 i18n.addResourceBundle(Locales.Ru, {
+  dropdown: {
+    xlsx: 'Импорт данных в XLSX',
+    ods: 'Импорт данных в ODS',
+  },
   navigation: {
     prev: 'Назад',
     next: 'Следующий шаг',
@@ -31,6 +35,10 @@ i18n.addResourceBundle(Locales.Ru, {
 });
 
 i18n.addResourceBundle(Locales.En, {
+  dropdown: {
+    xlsx: 'XLSX data import',
+    ods: 'ODS data import',
+  },
   navigation: {
     prev: 'Back',
     next: 'Next',

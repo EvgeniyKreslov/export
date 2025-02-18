@@ -1,11 +1,11 @@
-import { ImportODS } from "../components/CustomExportModal/CustomExportModal";
+import {CustomImportODS} from '../components/CustomExportModal/CustomExportModal';
 
 export const customImportUE = {
-    moduleId: 'testUE',
-    type: 'DataCardMenuItem',
-    active: true,
-    system: false,
-    resolver: () => true,
-    meta: {},
-    component: ImportODS
-}
+  moduleId: 'customImportData',
+  type: 'SearchPageCustomView',
+  active: true,
+  system: false,
+  resolver: (): boolean => true,
+  meta: {},
+  component: CustomImportODS
+};

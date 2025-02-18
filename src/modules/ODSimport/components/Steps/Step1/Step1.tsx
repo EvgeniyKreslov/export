@@ -23,7 +23,8 @@ import customStore from '../../../entities/CustomExportStore';
 		const { firstStepImportHandler, importRelationsEnabled, importClassifications, setCheckBox, setSelect } = this.props.customStore;
 
 		// @ts-ignore
-		const { typeName } = this.props.routerStore.currentPageComponent.store;
+		const { entityName } = this.props.routerStore?.currentPageComponent?.props?.match?.params;
+		
 		
 		return (
 			<>
@@ -33,7 +34,7 @@ import customStore from '../../../entities/CustomExportStore';
 						key='entityName'
 						label={i18n.t('firstStep>dataModelTitle')}
 						options={[
-							{title: typeName, value: typeName}
+							{title: entityName, value: entityName}
 						]}
 						onChange={setSelect('entityName')}
 					/>
