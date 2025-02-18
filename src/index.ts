@@ -1,5 +1,5 @@
-import customImportUE from "./modules/customExport";
-import './modules/customExport/lib/locales'
+import customImportUE from "./modules/ODSimport";
+import './modules/ODSimport/lib/locales'
 
 export default {
   userExits: [
