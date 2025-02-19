@@ -1,0 +1,7 @@
+/node_modules/
+.npmrc
+dist/index.es.js
+tsconfig.tsbuildinfo
+dist/index.es.js
+
+*storybook.log

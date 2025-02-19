@@ -1,11 +1,8 @@
-import customExportUE from "./modules/customExport";
-// import { init } from "./my_index";
-
-
-// setTimeout(init, 1000);
+import customImportUE from "./modules/ODSimport";
+import './modules/ODSimport/lib/locales'
 
 export default {
   userExits: [
-    {...customExportUE}
+    {...customImportUE}
   ]
 }
