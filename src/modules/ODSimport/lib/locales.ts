@@ -28,7 +28,7 @@ i18n.addResourceBundle(Locales.Ru, {
   },
   thirdStep: {
     title: 'Импорт',
-    text1: 'Выберите заполненный на предыдущем шаге ODT шаблон.',
+    text1: 'Выберите заполненный на предыдущем шаге ODS шаблон.',
     text2: 'Результаты будут доступны в уведомлениях.',
     button: 'Выберите файл ODS',
   },
@@ -54,7 +54,7 @@ i18n.addResourceBundle(Locales.En, {
 	firstStep: {
     title: 'Options',
 		dataModelTitle: 'Select data model object',
-    sourceSystemTitle: 'Загружать данные от имени системы-источника',
+    sourceSystemTitle: 'Load data by data source',
     importHandlerTitle: 'Select import handler',
     tiesImportTitle: 'Import ties',
     classificationImportTitle: 'Classification import',
@@ -66,7 +66,7 @@ i18n.addResourceBundle(Locales.En, {
   },
   thirdStep: {
     title: 'Import',
-    text1: 'Select ODT template, filled up at previous step',
+    text1: 'Select ODS template, filled up at previous step',
     text2: 'Results would be enabled in notifications',
     button: 'Select ODS file',
   },

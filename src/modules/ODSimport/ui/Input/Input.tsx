@@ -12,7 +12,7 @@ interface IProps {
 const Input = (props: IProps) => {
   const { label, key, disabled, defaultValue, style } = props;
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', marginTop: 10 }}>
       {label?.length && <div style={{ width: 300 }}>{label}</div>}
       <PlatformInput
         key={key}

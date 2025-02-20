@@ -12,14 +12,15 @@ interface IProps {
   key: string,
   disabled?: boolean,
   defaultValue?: string,
+  style?: object,
 
   onChange: Function
 }
 
 const Select = (props: IProps) => {
-  const { label, options, key, disabled, defaultValue, onChange } = props;
+  const { label, options, key, disabled, defaultValue, style, onChange } = props;
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', ...style }}>
     {label?.length && <div style={{ width: 300 }}>{label}</div>}
     <PlatformSelect
       key={key}

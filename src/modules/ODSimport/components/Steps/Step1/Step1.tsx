@@ -38,6 +38,7 @@ import customStore from '../../../entities/CustomExportStore';
 							{title: entityLabel, value: entityName}
 						]}
 						onChange={setSelect('entityName')}
+						style={{ marginTop: 10 }}
 					/>
 					<Select
 						key='sourceSystem'
@@ -46,6 +47,7 @@ import customStore from '../../../entities/CustomExportStore';
 							{title: 'universe', value: 'universe'}
 						]}
 						onChange={setSelect('sourceSystem')}
+						style={{ marginTop: 10 }}
 					/>
 					<Input
 						style={{ width: 480 }}
@@ -58,12 +60,14 @@ import customStore from '../../../entities/CustomExportStore';
 						label={i18n.t('firstStep>tiesImportTitle')}
 						checked={importRelationsEnabled}
 						onChange={setCheckBox}
+						style={{ marginTop: 10 }}
 					/>
 					<CheckBox
 						name='importClassifications'
 						label={i18n.t('firstStep>classificationImportTitle')}
 						checked={importClassifications}
 						onChange={setCheckBox}
+						style={{ marginTop: 10 }}
 					/>
 				</Wizard.Content>
 				<Wizard.Footer
