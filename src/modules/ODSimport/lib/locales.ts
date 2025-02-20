@@ -1,6 +1,9 @@
 import { i18n, Locales } from '@universe-platform/sdk';
 
 i18n.addResourceBundle(Locales.Ru, {
+  modal: {
+    title: 'импорт данных',
+  },
   dropdown: {
     xlsx: 'Импорт данных в XLSX',
     ods: 'Импорт данных в ODS',
@@ -31,10 +34,14 @@ i18n.addResourceBundle(Locales.Ru, {
   },
   fileInput: {
     button: 'Выберите файл ODS',
+    selectedFile: 'Вы выбрали файл - ',
   }
 });
 
 i18n.addResourceBundle(Locales.En, {
+  modal: {
+    title: 'data import',
+  },
   dropdown: {
     xlsx: 'XLSX data import',
     ods: 'ODS data import',
@@ -65,5 +72,6 @@ i18n.addResourceBundle(Locales.En, {
   },
   fileInput: {
     button: 'Select ODS file',
+    selectedFile: 'You have selected file - ',
   }
 });

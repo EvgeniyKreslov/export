@@ -24,7 +24,8 @@ import customStore from '../../../entities/CustomExportStore';
 
 		// @ts-ignore
 		const { entityName } = this.props.routerStore?.currentPageComponent?.props?.match?.params;
-		
+		// @ts-ignore
+		const entityLabel = this.props.routerStore?.currentPageComponent?.searchStore?.innerColumnsStore?.entity?.displayName?.value?.value;
 		
 		return (
 			<>
@@ -34,7 +35,7 @@ import customStore from '../../../entities/CustomExportStore';
 						key='entityName'
 						label={i18n.t('firstStep>dataModelTitle')}
 						options={[
-							{title: entityName, value: entityName}
+							{title: entityLabel, value: entityName}
 						]}
 						onChange={setSelect('entityName')}
 					/>
@@ -47,7 +48,7 @@ import customStore from '../../../entities/CustomExportStore';
 						onChange={setSelect('sourceSystem')}
 					/>
 					<Input
-						style={{ width: 500 }}
+						style={{ width: 480 }}
 						label={i18n.t('firstStep>importHandlerTitle')}
 						defaultValue='Базовый импорт ODS'
 						disabled
