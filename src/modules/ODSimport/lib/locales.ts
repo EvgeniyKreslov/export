@@ -1,6 +1,9 @@
 import { i18n, Locales } from '@universe-platform/sdk';
 
 i18n.addResourceBundle(Locales.Ru, {
+  modal: {
+    title: 'импорт данных',
+  },
   dropdown: {
     xlsx: 'Импорт данных в XLSX',
     ods: 'Импорт данных в ODS',
@@ -25,16 +28,20 @@ i18n.addResourceBundle(Locales.Ru, {
   },
   thirdStep: {
     title: 'Импорт',
-    text1: 'Выберите заполненный на предыдущем шаге ODT шаблон.',
+    text1: 'Выберите заполненный на предыдущем шаге ODS шаблон.',
     text2: 'Результаты будут доступны в уведомлениях.',
     button: 'Выберите файл ODS',
   },
   fileInput: {
     button: 'Выберите файл ODS',
+    selectedFile: 'Вы выбрали файл - ',
   }
 });
 
 i18n.addResourceBundle(Locales.En, {
+  modal: {
+    title: 'data import',
+  },
   dropdown: {
     xlsx: 'XLSX data import',
     ods: 'ODS data import',
@@ -47,7 +54,7 @@ i18n.addResourceBundle(Locales.En, {
 	firstStep: {
     title: 'Options',
 		dataModelTitle: 'Select data model object',
-    sourceSystemTitle: 'Загружать данные от имени системы-источника',
+    sourceSystemTitle: 'Load data by data source',
     importHandlerTitle: 'Select import handler',
     tiesImportTitle: 'Import ties',
     classificationImportTitle: 'Classification import',
@@ -59,11 +66,12 @@ i18n.addResourceBundle(Locales.En, {
   },
   thirdStep: {
     title: 'Import',
-    text1: 'Select ODT template, filled up at previous step',
+    text1: 'Select ODS template, filled up at previous step',
     text2: 'Results would be enabled in notifications',
     button: 'Select ODS file',
   },
   fileInput: {
     button: 'Select ODS file',
+    selectedFile: 'You have selected file - ',
   }
 });

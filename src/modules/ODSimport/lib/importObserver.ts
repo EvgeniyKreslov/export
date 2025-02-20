@@ -9,7 +9,6 @@ export function importObserver (setParent: (element: HTMLElement) => void): void
     let importBtn: HTMLElement;
 
     mutations.forEach(function (mutation: MutationRecord) {
-      console.log('has mutation');
 
       if (mutation.target.nodeName !== 'BODY' && mutation.target.nodeName !== 'DIV') {
         return;
@@ -36,7 +35,6 @@ export function importObserver (setParent: (element: HTMLElement) => void): void
       }
 
       if (importBtn) {
-        console.log('has parent');
         setParent(importBtn);
         mutationObserver.disconnect();
       }

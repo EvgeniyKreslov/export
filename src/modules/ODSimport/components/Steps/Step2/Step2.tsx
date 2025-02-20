@@ -3,15 +3,17 @@ import { i18n } from '@universe-platform/sdk';
 import { Button, INTENT, SIZE, Wizard } from '@universe-platform/uikit';
 import { getTemplate } from '../../../api/api';
 
-import './step2.scss';
-
 const Step2 = () => {	
 	return (
 		<>
 			<Wizard.Navigation />
 			<Wizard.Content>
-				<div className='container'>
-					<div>{i18n.t('secondStep>text')}</div>
+				<div style={{
+					display: 'flex',
+					justifyContent: 'center',
+					flexDirection: 'column',
+				}}>
+					<div style={{ alignSelf: 'center' }}>{i18n.t('secondStep>text')}</div>
 					<Button
 						size={SIZE.MIDDLE}
 						intent={INTENT.PRIMARY}

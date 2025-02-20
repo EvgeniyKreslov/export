@@ -4,8 +4,6 @@ import { Wizard } from '@universe-platform/uikit';
 import { ICustomStore } from '../../../lib/types';
 import { FileInput } from '../../../ui';
 
-import './step3.scss';
-
 interface IProps {
   store: ICustomStore
 }
@@ -16,10 +14,14 @@ const Step3 = ({store}: IProps) => {
     <>
       <Wizard.Navigation />
       <Wizard.Content>
-        <div className='container'>
-          <div>{i18n.t('thirdStep>text1')}</div>
-          <div>{i18n.t('thirdStep>text2')}</div>
-          <div className='file-input'>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          flexDirection: 'column',
+        }}>
+          <div style={{ alignSelf: 'center' }}>{i18n.t('thirdStep>text1')}</div>
+          <div style={{ alignSelf: 'center' }}>{i18n.t('thirdStep>text2')}</div>
+          <div style={{ marginTop: 10, alignSelf: 'center' }}>
             <FileInput store={store}/>
           </div>
         </div>
