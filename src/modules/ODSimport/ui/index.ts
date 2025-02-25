@@ -4,8 +4,8 @@ import Input from './Input/Input';
 import Select from './Select/Select';
 
 export {
-  CheckBox,
-  FileInput,
-  Input,
-  Select,
-}
+    CheckBox,
+    FileInput,
+    Input,
+    Select
+};
