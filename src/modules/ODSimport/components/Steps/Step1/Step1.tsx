@@ -24,7 +24,8 @@ import customStore from '../../../entities/CustomExportStore';
 
 		// @ts-ignore
 		const { entityName } = this.props.routerStore?.currentPageComponent?.props?.match?.params;
-		
+		// @ts-ignore
+		const entityLabel = this.props.routerStore?.currentPageComponent?.searchStore?.innerColumnsStore?.entity?.displayName?.value?.value;
 		
 		return (
 			<>
@@ -34,9 +35,10 @@ import customStore from '../../../entities/CustomExportStore';
 						key='entityName'
 						label={i18n.t('firstStep>dataModelTitle')}
 						options={[
-							{title: entityName, value: entityName}
+							{title: entityLabel, value: entityName}
 						]}
 						onChange={setSelect('entityName')}
+						style={{ marginTop: 10 }}
 					/>
 					<Select
 						key='sourceSystem'
@@ -45,9 +47,10 @@ import customStore from '../../../entities/CustomExportStore';
 							{title: 'universe', value: 'universe'}
 						]}
 						onChange={setSelect('sourceSystem')}
+						style={{ marginTop: 10 }}
 					/>
 					<Input
-						style={{ width: 500 }}
+						style={{ width: 480 }}
 						label={i18n.t('firstStep>importHandlerTitle')}
 						defaultValue='Базовый импорт ODS'
 						disabled
@@ -57,12 +60,14 @@ import customStore from '../../../entities/CustomExportStore';
 						label={i18n.t('firstStep>tiesImportTitle')}
 						checked={importRelationsEnabled}
 						onChange={setCheckBox}
+						style={{ marginTop: 10 }}
 					/>
 					<CheckBox
 						name='importClassifications'
 						label={i18n.t('firstStep>classificationImportTitle')}
 						checked={importClassifications}
 						onChange={setCheckBox}
+						style={{ marginTop: 10 }}
 					/>
 				</Wizard.Content>
 				<Wizard.Footer

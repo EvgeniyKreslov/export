@@ -1,8 +1,6 @@
 import { Select as PlatformSelect, SIZE } from "@universe-platform/uikit";
 import React from "react";
 
-import './select.scss';
-
 interface IOption {
   title: string,
   value: string,
@@ -14,15 +12,16 @@ interface IProps {
   key: string,
   disabled?: boolean,
   defaultValue?: string,
+  style?: object,
 
   onChange: Function
 }
 
 const Select = (props: IProps) => {
-  const { label, options, key, disabled, defaultValue, onChange } = props;
+  const { label, options, key, disabled, defaultValue, style, onChange } = props;
   return (
-    <div className="container">
-    {label?.length && <div className="label">{label}</div>}
+    <div style={{ display: 'flex', ...style }}>
+    {label?.length && <div style={{ width: 300 }}>{label}</div>}
     <PlatformSelect
       key={key}
       size={SIZE.MIDDLE}
