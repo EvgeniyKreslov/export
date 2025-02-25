@@ -5,7 +5,7 @@ interface IProps {
   checked: boolean,
   label: string,
   name: string,
-  style: object,
+  style?: object,
 
   onChange: Function
 }

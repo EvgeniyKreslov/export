@@ -4,7 +4,7 @@ import {inject, observer} from 'mobx-react';
 // import { i18n } from "@universe-platform/sdk";
 import {
   // Button,
-  DropDown,
+  // DropDown,
   Modal,
   SIZE,
   Wizard
@@ -17,8 +17,9 @@ import Step2 from '../Steps/Step2/Step2';
 import { i18n } from '@universe-platform/sdk';
 import { importData } from '../../api/api';
 import Step3 from '../Steps/Step3/Step3';
+import { DropDown } from '../../ui';
 
-const {Item} = DropDown;
+// const {Item} = DropDown;
 
 @inject((stores: any) => {
   return {
@@ -36,6 +37,8 @@ export class CustomImportODS extends React.Component<any> {
     const {setIsModalOpen, setIsDropDownOpen, setFileType} = customStore;
 
     await setFileType(value);
+
+    console.log('value', value)
 
     if (value === 'xlxs') {
       this.anchorEl?.click()
@@ -87,7 +90,7 @@ export class CustomImportODS extends React.Component<any> {
 
     return (
       <>
-          <DropDown
+          {/* <DropDown
             target={
               <div
                 style={{
@@ -126,7 +129,15 @@ export class CustomImportODS extends React.Component<any> {
                 this.handleClick('ods');
               }}>{i18n.t('dropdown>ods')}
             </Item>
-          </DropDown>
+          </DropDown> */}
+          <DropDown
+            onClickXLXS={() => {
+              this.handleClick('xlxs');
+            }}
+            onClickODS={() => {
+              this.handleClick('ods');
+            }}
+          />
           <Modal
               isOpen={isModalOpen}
               onClose={this.handleCloseModal}
