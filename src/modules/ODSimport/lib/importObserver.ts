@@ -1,52 +1,52 @@
 export function importObserver (setParent: (element: HTMLElement) => void): void {
-  const body = window.document.querySelector('body');
+    const body = window.document.querySelector('body');
 
-  if (!body) {
-    return;
-  }
-
-  const mutationObserver = new MutationObserver(mutations => {
-    let importBtn: HTMLElement;
-
-    mutations.forEach(function (mutation: MutationRecord) {
-
-      if (mutation.target.nodeName !== 'BODY' && mutation.target.nodeName !== 'DIV') {
+    if (!body) {
         return;
-      }
+    }
 
-      const importNode = document.getElementsByName('import');
+    const mutationObserver = new MutationObserver(mutations => {
+        let importBtn: HTMLElement;
 
-      if (importNode.length) {
-        const btn = importNode[0];
+        mutations.forEach(function (mutation: MutationRecord) {
 
-        if (!btn) {
-          return;
-        }
+            if (mutation.target.nodeName !== 'BODY' && mutation.target.nodeName !== 'DIV') {
+                return;
+            }
 
-        // скрываем штатную кнопку
-        btn.style.setProperty('pointer-events', 'none');
-        btn.style.setProperty('visibility', 'hidden');
+            const importNode = document.getElementsByName('import');
 
-        if (!btn) {
-          return;
-        }
+            if (importNode.length) {
+                const btn = importNode[0];
 
-        importBtn = btn;
-      }
+                if (!btn) {
+                    return;
+                }
 
-      if (importBtn) {
-        setParent(importBtn);
-        mutationObserver.disconnect();
-      }
+                // скрываем штатную кнопку
+                btn.style.setProperty('pointer-events', 'none');
+                btn.style.setProperty('visibility', 'hidden');
+
+                if (!btn) {
+                    return;
+                }
+
+                importBtn = btn;
+            }
+
+            if (importBtn) {
+                setParent(importBtn);
+                mutationObserver.disconnect();
+            }
+        });
     });
-  });
 
-  mutationObserver.observe(body, {
-    attributes: false,
-    characterData: false,
-    childList: true,
-    subtree: true,
-    attributeOldValue: false,
-    characterDataOldValue: false
-  });
+    mutationObserver.observe(body, {
+        attributes: false,
+        characterData: false,
+        childList: true,
+        subtree: true,
+        attributeOldValue: false,
+        characterDataOldValue: false
+    });
 }
