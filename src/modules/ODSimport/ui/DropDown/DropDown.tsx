@@ -1,11 +1,6 @@
 import { i18n } from "@universe-platform/sdk";
 import React, { useEffect, useState } from "react";
 
-// interface IOption {
-//   title: string,
-//   value: string,
-// }
-
 interface IProps {
   onClickXLXS: Function,
   onClickODS: Function
@@ -26,9 +21,7 @@ const divStyle={
   paddingLeft: 5,
   backgroundColor: '#e3e3e3',
   border: '1px solid #cccccc',
-  borderRadius: '2px',
-  
-  // hover
+  borderRadius: '2px'
 }
 
 const DropDown = (props: IProps) => {
