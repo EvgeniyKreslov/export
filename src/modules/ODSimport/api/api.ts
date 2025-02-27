@@ -30,6 +30,8 @@ export const importData = () => {
   })
 }
 
+let fileName = 'sample.ods';
+
 export const getTemplate = () => {
   fetch(
     `/universe-backend/api/v2/core/import-data/template?_dc=${udSession}`,
@@ -54,6 +56,14 @@ export const getTemplate = () => {
       Dialog.showError('Не получилось скачать шаблон. Попробуйте ещё раз или обратитесь к администратору');
       return null
     }
+    const disposition = response.headers.get('Content-Disposition');
+    if( disposition && disposition.indexOf('attachment') !== -1 ) {
+        const filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+        const matches = filenameRegex.exec(disposition);
+        if( matches != null && matches[1] ) {
+          fileName = matches[1].replace(/['"]/g, '');
+        }
+    };
     return response.blob()
   })
   .then((blob) => {
@@ -61,7 +71,7 @@ export const getTemplate = () => {
       const url = window.URL.createObjectURL(new Blob([blob]));
       const link = document.createElement('a');
       link.href = url;
-      link.setAttribute('download', `sample.ods`);
+      link.setAttribute('download', fileName);
       document.body.appendChild(link);
       link.click();
       // @ts-ignore
