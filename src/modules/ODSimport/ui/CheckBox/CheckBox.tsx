@@ -2,11 +2,12 @@ import React from 'react';
 import {Checkbox as PlatformCheckBox, CheckboxChangeEvent} from '@universe-platform/uikit';
 
 interface IProps {
-    checked: boolean;
-    label: string;
-    name: string;
-    style?: object;
-    onChange: Function;
+  checked: boolean,
+  label: string,
+  name: string,
+  style?: object,
+
+  onChange: Function
 }
 
 const Checkbox = (props: IProps) => {
