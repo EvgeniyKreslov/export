@@ -1,5 +1,6 @@
-import { Dialog } from "@universe-platform/sdk";
-import customStore from "../entities/CustomExportStore";
+import { Dialog } from '@universe-platform/sdk';
+
+import customStore from '../entities/CustomExportStore';
 
 const { formData, setIsModalOpen } = customStore;
 
@@ -12,25 +13,25 @@ export const importData = () => {
     {
       method: 'POST',
       headers: {
-        "Content-Type": "multipart/form-data",
-        "Authorization": `${udToken}`,
+        'Content-Type': 'multipart/form-data',
+        Authorization: `${udToken}`
       },
       body: formData
     }
   )
   .then((res: Response) => {
-    if(res.status == 200) {
+    if (res.status === 200) {
       Dialog.showMessage('Импорт успешен');
     } else {
       Dialog.showError('Не получилось импортировать. Попробуйте ещё раз или обратитесь к администратору');
     }
   })
   .finally(() => {
-    setIsModalOpen(false)
-  })
-}
+    setIsModalOpen(false);
+  });
+};
 
-let fileName = 'sample.ods';
+let fileName = 'template-import.ods';
 
 export const getTemplate = () => {
   fetch(
@@ -38,8 +39,8 @@ export const getTemplate = () => {
     {
       method: 'POST',
       headers: {
-        "Content-Type": "application/json",
-        "Authorization": `${udToken}`
+        'Content-Type': 'application/json',
+        Authorization: `${udToken}`
       },
       body: JSON.stringify({
         entityName: 'test',
@@ -54,28 +55,35 @@ export const getTemplate = () => {
   .then((response: Response) => {
     if (response.status !== 200) {
       Dialog.showError('Не получилось скачать шаблон. Попробуйте ещё раз или обратитесь к администратору');
-      return null
+
+return null;
     }
     const disposition = response.headers.get('Content-Disposition');
-    if( disposition && disposition.indexOf('attachment') !== -1 ) {
-        const filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+    if (disposition && disposition.includes('attachment')) {
+        const filenameRegex = /filename[^\n;=]*=((["']).*?\2|[^\n;]*)/;
         const matches = filenameRegex.exec(disposition);
-        if( matches != null && matches[1] ) {
-          fileName = matches[1].replace(/['"]/g, '');
+        if (matches != null && matches[1]) {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-expect-error
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-call
+          fileName = matches[1].replaceAll(/["']/g, '');
+
+          fileName = `${fileName.split('.')[0]}.ods`;
         }
-    };
-    return response.blob()
+    }
+
+return response.blob();
   })
-  .then((blob) => {
+  .then(blob => {
     if (blob) {
       const url = window.URL.createObjectURL(new Blob([blob]));
       const link = document.createElement('a');
       link.href = url;
       link.setAttribute('download', fileName);
-      document.body.appendChild(link);
+      document.body.append(link);
       link.click();
       // @ts-ignore
-      link.parentNode.removeChild(link);
+      link.remove();
     }
-  })
-}
+  });
+};
