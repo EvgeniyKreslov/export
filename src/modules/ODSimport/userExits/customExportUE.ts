@@ -1,4 +1,4 @@
-import {CustomImportODS} from '../components/CustomExportModal/CustomExportModal';
+import { CustomImportODS } from '../components/CustomExportModal/CustomExportModal';
 
 export const customImportUE = {
     moduleId: 'customImportData',

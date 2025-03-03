@@ -1,3 +1,1 @@
-import { customImportUE } from "./userExits/customExportUE";
-
-export default customImportUE;
+export { customImportUE as default } from './userExits/customExportUE';
