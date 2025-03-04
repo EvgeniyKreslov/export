@@ -18,6 +18,7 @@ i18n.addResourceBundle(Locales.Ru, {
         dataModelTitle: 'Выберите объект модели данных',
         sourceSystemTitle: 'Загружать данные от имени системы-источника',
         importHandlerTitle: 'Выберите обработчик импорта',
+        mergeWithPrevious: 'Игнорировать пустые ячейки',
         tiesImportTitle: 'Импортировать связи',
         classificationImportTitle: 'Импорт классификации'
     },
@@ -56,6 +57,7 @@ i18n.addResourceBundle(Locales.En, {
         dataModelTitle: 'Select data model object',
         sourceSystemTitle: 'Load data by data source',
         importHandlerTitle: 'Select import handler',
+        mergeWithPrevious: 'Ignore empty cells',
         tiesImportTitle: 'Import ties',
         classificationImportTitle: 'Classification import'
     },

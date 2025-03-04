@@ -31,9 +31,10 @@ export const importData = () => {
   });
 };
 
-let fileName = 'template-import.ods';
-
 export const getTemplate = () => {
+
+  const fileName = `${localStorage.getItem('entityName')}-import-template.ods` || 'import-template.ods';
+
   fetch(
     `/universe-backend/api/v2/core/import-data/template?_dc=${udSession}`,
     {
@@ -56,23 +57,10 @@ export const getTemplate = () => {
     if (response.status !== 200) {
       Dialog.showError('Не получилось скачать шаблон. Попробуйте ещё раз или обратитесь к администратору');
 
-return null;
-    }
-    const disposition = response.headers.get('Content-Disposition');
-    if (disposition && disposition.includes('attachment')) {
-        const filenameRegex = /filename[^\n;=]*=((["']).*?\2|[^\n;]*)/;
-        const matches = filenameRegex.exec(disposition);
-        if (matches != null && matches[1]) {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-expect-error
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-call
-          fileName = matches[1].replaceAll(/["']/g, '');
-
-          fileName = `${fileName.split('.')[0]}.ods`;
-        }
+      return null;
     }
 
-return response.blob();
+    return response.blob();
   })
   .then(blob => {
     if (blob) {

@@ -4,6 +4,7 @@ export interface ICustomStore {
     entityName: string;
     sourceSystem: string;
     firstStepImportHandler: string;
+    mergeWithPrevious: boolean;
     importRelationsEnabled: boolean;
     importClassifications: boolean;
 
