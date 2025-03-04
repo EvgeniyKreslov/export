@@ -11,6 +11,7 @@ class CustomStore implements ICustomStore {
     @observable sourceSystem = '';
     @observable firstStepImportHandler = 'records-and-relations-ods'; // hardCode, чтобы не было выбора
 
+    @observable mergeWithPrevious = true;
     @observable importRelationsEnabled = false;
     @observable importClassifications = false;
 
@@ -49,7 +50,7 @@ class CustomStore implements ICustomStore {
         this.formData.append('format', 'XLSX'); // только XLSX
         this.formData.append('entityName', this.entityName);
         this.formData.append('sourceSystem', this.sourceSystem);
-        this.formData.append('mergeWithPrevious', 'true'); // только true
+        this.formData.append('mergeWithPrevious', this.mergeWithPrevious ? 'true' : 'false');
         this.formData.append('additional', JSON.stringify({
             'org.unidata.mdm.data.importRelationsEnabled': false,
             importClassifications: this.importClassifications
