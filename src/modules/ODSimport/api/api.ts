@@ -31,9 +31,8 @@ export const importData = () => {
   });
 };
 
-export const getTemplate = () => {
-
-  const fileName = `${localStorage.getItem('entityName')}-import-template.ods` || 'import-template.ods';
+export const getTemplate = (entityName: string, importClassifications: boolean, mergeWithPrevious: boolean) => {
+  const fileName = `${entityName}-import-template.ods` || 'import-template.ods';
 
   fetch(
     `/universe-backend/api/v2/core/import-data/template?_dc=${udSession}`,
@@ -44,11 +43,12 @@ export const getTemplate = () => {
         Authorization: `${udToken}`
       },
       body: JSON.stringify({
-        entityName: 'test',
+        entityName,
         target: 'records-and-relations-ods',
         format: 'XLSX',
         additional: {
-          importClassifications: false
+          importClassifications,
+          mergeWithPrevious
         }
       })
     }
