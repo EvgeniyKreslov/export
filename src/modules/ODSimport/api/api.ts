@@ -31,7 +31,7 @@ export const importData = () => {
   });
 };
 
-export const getTemplate = (entityName: string, importClassifications: boolean, mergeWithPrevious: boolean) => {
+export const getTemplate = (entityName: string, importClassifications: boolean, mergeWithPrevious: boolean, importRelationsEnabled: boolean) => {
   const fileName = `${entityName}-import-template.ods` || 'import-template.ods';
 
   fetch(
@@ -48,7 +48,8 @@ export const getTemplate = (entityName: string, importClassifications: boolean, 
         format: 'XLSX',
         additional: {
           importClassifications,
-          mergeWithPrevious
+          mergeWithPrevious,
+          importRelationsEnabled
         }
       })
     }
