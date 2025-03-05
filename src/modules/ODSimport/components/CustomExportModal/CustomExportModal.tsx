@@ -36,7 +36,7 @@ export class CustomImportODS extends React.Component<any> {
 	@action.bound
 	handleClick = async (value: string): Promise<void> => {
 		const { customStore } = this.props;
-		const { setIsModalOpen, setIsDropDownOpen, setFileType } = customStore;
+		const { setIsModalOpen, setFileType } = customStore;
 
 		await setFileType(value);
 
@@ -45,8 +45,6 @@ export class CustomImportODS extends React.Component<any> {
 		} else {
 				setIsModalOpen(true);
 		}
-
-		setIsDropDownOpen(false);
 	};
 
 	@action.bound

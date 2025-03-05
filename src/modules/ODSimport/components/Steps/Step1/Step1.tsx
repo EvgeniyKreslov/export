@@ -26,14 +26,21 @@ class Step1 extends React.Component {
 		// eslint-disable-next-line no-unsafe-optional-chaining
 		const {entityName} = this.props.routerStore?.currentPageComponent?.props?.match?.params;
 		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+		// @ts-expect-error
+		const entityLabel = this.props.routerStore?.currentPageComponent?.searchStore?.innerColumnsStore?.entity?.displayName?.value?.value;
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-ignore
-		const { setSelect } = this.props.customStore;
-		setSelect('entityName')(entityName);
+		const { setEntity } = this.props.customStore;
+		setEntity({
+			label: entityLabel,
+			value: entityName
+		});
 	}
 
 	override render () {
 		const {
 			mergeWithPrevious,
+			entity,
 			importRelationsEnabled,
 			importClassifications,
 			setCheckBox,
@@ -41,18 +48,7 @@ class Step1 extends React.Component {
 			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 			// @ts-ignore
 		} = this.props.customStore;
-
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		// @ts-expect-error
-		// eslint-disable-next-line no-unsafe-optional-chaining
-		const {entityName} = this.props.routerStore?.currentPageComponent?.props?.match?.params;
-
-		localStorage.setItem('entityName', entityName)
-
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		// @ts-expect-error
-		const entityLabel = this.props.routerStore?.currentPageComponent?.searchStore?.innerColumnsStore?.entity?.displayName?.value?.value;
-
+	
 		return (
 			<>
 				<Wizard.Navigation allowNext/>
@@ -60,7 +56,7 @@ class Step1 extends React.Component {
 					<Input
 						style={{maxWidth: '400'}}
 						label={i18n.t('firstStep>dataModelTitle')}
-						defaultValue={entityName}
+						defaultValue={entity.label}
 						disabled
 					/>
 					<Select

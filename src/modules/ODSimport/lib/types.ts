@@ -1,7 +1,10 @@
 export interface ICustomStore {
     isModalOpen: boolean;
     fileType: string;
-    entityName: string;
+    entity: {
+      label: string,
+			value: string
+		};
     sourceSystem: string;
     firstStepImportHandler: string;
     mergeWithPrevious: boolean;
@@ -12,6 +15,7 @@ export interface ICustomStore {
 
     setIsModalOpen: Function;
     setFileType: Function;
+		setEntity: Function;
     setCheckBox: Function;
     setSelect: Function;
 
