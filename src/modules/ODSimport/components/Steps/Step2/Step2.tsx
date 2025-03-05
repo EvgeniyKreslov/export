@@ -20,6 +20,7 @@ class Step2 extends React.Component {
 					mergeWithPrevious,
 					entity,
 					importClassifications,
+					importRelationsEnabled,
 					// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 					// @ts-ignore
 				} = this.props.customStore;
@@ -39,7 +40,7 @@ class Step2 extends React.Component {
 							size={SIZE.MIDDLE}
 							intent={INTENT.PRIMARY}
 							style={{ width: 150, alignSelf: 'center', marginTop: 10 }}
-							onClick={()=>getTemplate(entity.value, importClassifications, mergeWithPrevious)}
+							onClick={()=>getTemplate(entity.value, importClassifications, mergeWithPrevious, importRelationsEnabled)}
 						>
 							{i18n.t('secondStep>button')}
 						</Button>
